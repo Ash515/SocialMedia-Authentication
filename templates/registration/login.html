@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+ 
+ 
+ 
+{% block title %} Login {% endblock %}
+ 
+ 
+ 
+ 
+{% block body %}
+ 
+<h1>Login Here</h1>
+ 
+<form action="{% url 'login' %}" method="post" novalidate >
+ 
+    {% csrf_token %}
+ 
+ 
+     {{form.as_p}}
+ 
+    <input type="submit" value="Login"/>
+ 
+</form>
+ 
+ 
+<ul>
+ 
+   
+     <li><a href="{% url 'social:begin' 'linkedin-oauth2' %}">Signin With Linkedin</a> </li>
+ 
+ 
+ 
+ 
+ 
+</ul>
+ 
+ 
+{% endblock %}
